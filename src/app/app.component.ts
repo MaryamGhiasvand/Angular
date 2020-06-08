@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+   selector: 'app-root',
    templateUrl: './app.component.html',
   /*
     //for element button we have (event) with small case
@@ -16,18 +16,21 @@ import { Component } from '@angular/core';
     '<p>test TwoWay Binding </p>'+
     '<p> <input [(ngModel)]="twoWayVar" (keyup.enter)="twoWayBinding()"> </p>',
   */
-
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'AngularProject';
-  attrBind="DefaultAttrVal";
-  twoWayVar="Default2WayVal"
-  twoWayBinding(){
-    alert('twoWayVar : '+ this.twoWayVar);
-  }
-  clickme(e,myInput :HTMLInputElement){
-    console.log('btn clicked',e);
-    alert('inputText : '+ myInput.value);
+  // attrBind="DefaultAttrVal";
+  // twoWayVar="Default2WayVal"
+  // twoWayBinding(){
+  //   alert('twoWayVar : '+ this.twoWayVar);
+  // }
+  items =['item1','item2','item3' ];
+  // clickme(e,myInput :HTMLInputElement){
+  //    console.log('btn clicked',e);
+  //    alert('inputText : '+ myInput.value);
+  // }
+  receiveItemFromChild(newItem){
+    this.items.push(newItem);
   }
 }
